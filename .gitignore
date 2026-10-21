@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment files
+.env
+.env.*
+!.env.example
+data/
+
+# Test and tool caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# YOLO outputs and trained weights
+ml/runs/
+ml/models/*.pt
+*.pt
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

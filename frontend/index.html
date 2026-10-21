@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoVision AI</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <p class="eyebrow">SMART WASTE ASSISTANT</p>
+        <h1>EcoVision <span>AI</span></h1>
+        <p class="subtitle">Detect, classify, and dispose responsibly.</p>
+      </header>
+      <section class="grid">
+        <article class="card detector">
+          <div class="card-title"><h2>Live detection</h2><span class="status" id="mode">● Checking mode...</span></div>
+          <div class="camera"><video id="camera" autoplay playsinline></video><div class="scan"></div><div class="camera-icon" id="cameraIcon">♻</div><p id="cameraMessage">Camera is off</p></div>
+          <div class="controls">
+            <button class="secondary" id="startCamera">Start camera</button>
+            <button class="secondary" id="stopCamera">Stop</button>
+            <select id="wasteType">
+              <option value="plastic">Plastic</option><option value="paper">Paper</option>
+              <option value="cardboard">Cardboard</option><option value="glass">Glass</option>
+              <option value="metal">Metal</option><option value="organic">Organic</option>
+              <option value="e_waste">E-waste</option><option value="other">Other</option>
+            </select>
+            <input id="confidence" type="number" min="0" max="1" step="0.01" value="0.92" />
+            <button id="detect">Simulate detection</button>
+          </div>
+        </article>
+        <article class="card result"><h2>Latest result</h2><div id="result"><p class="muted">Run a demo detection to see the recommendation.</p></div></article>
+      </section>
+      <section class="stats">
+        <article class="metric"><small>Total detections</small><strong id="total">0</strong></article>
+        <article class="metric"><small>Today</small><strong id="today">0</strong></article>
+        <article class="metric wide"><small>Waste distribution</small><div id="distribution" class="bars"></div></article>
+      </section>
+      <section class="card"><div class="card-title"><h2>Recent history</h2><button class="secondary" id="refresh">Refresh</button></div><div class="table-wrap"><table><thead><tr><th>Type</th><th>Confidence</th><th>Category</th><th>Bin</th><th>Time</th></tr></thead><tbody id="history"></tbody></table></div></section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

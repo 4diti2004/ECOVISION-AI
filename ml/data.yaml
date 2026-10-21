@@ -1,0 +1,24 @@
+# Place the dataset under ml/datasets/waste/ using this structure:
+#
+# ml/datasets/waste/
+# ├── images/
+# │   ├── train/
+# │   └── val/
+# └── labels/
+#     ├── train/
+#     └── val/
+#
+# Each image needs a matching YOLO-format label file.
+path: ml/datasets/waste
+train: images/train
+val: images/val
+
+names:
+  0: plastic
+  1: paper
+  2: cardboard
+  3: glass
+  4: metal
+  5: organic
+  6: e_waste
+  7: other
